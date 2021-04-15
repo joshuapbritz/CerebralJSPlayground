@@ -9,5 +9,7 @@ This project was created with ReactJS and CerebralJS, and is hosted on Netlify.
 ## Getting Started
 - Clone the repo
 - Install dependencies using `yarn install`
-- Install the CerebralJS Debugger
+- Install the [CerebralJS Debugger](https://cerebraljs.com/docs/introduction/devtools.html)
 - Run the project using `yarn start`
+
+You can find out more information about CerebralJS [here](https://cerebraljs.com/docs/introduction/the_architecture.html)
