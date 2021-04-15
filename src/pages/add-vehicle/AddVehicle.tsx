@@ -4,6 +4,7 @@ import { sequences } from "cerebral";
 import styles from "./AddVehicle.module.scss";
 import { Car } from "../../model/car";
 import { useHistory } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export const AddVehicle = connect(
   {
@@ -64,6 +65,10 @@ export const AddVehicle = connect(
             </div>
           </form>
         </article>
+
+        <NavLink to="/" className="fab">
+          cancel
+        </NavLink>
       </div>
     );
   }

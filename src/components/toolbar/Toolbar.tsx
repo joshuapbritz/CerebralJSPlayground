@@ -19,7 +19,11 @@ export const Toolbar = connect(
           CarApp | {name} | {count}
         </div>
         {!!car && (
-          <div className="current">
+          <div className={styles.Current}>
+            <span
+              className={styles.Swatch}
+              style={{ backgroundColor: car.color.value }}
+            ></span>
             {car.make} {car.model}
           </div>
         )}

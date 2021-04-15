@@ -4,6 +4,7 @@ import { state } from "cerebral";
 import "./Home.scss";
 import { Car } from "../../model/car";
 import { NavLink } from "react-router-dom";
+import { Sidebar } from "../../components/sidebar/Sidebar";
 
 interface HomeProps {
   name: string;
@@ -20,6 +21,8 @@ export const Home = connect(
   ({ name, surname, car }: HomeProps) => {
     return (
       <>
+        <Sidebar />
+
         <div className="Home">
           <h1>
             Hello{" "}
@@ -47,7 +50,12 @@ export const Home = connect(
                   <tr>
                     <td>Color</td>
                     <td>
-                      {car.color?.name} {car.color?.value}
+                      <span
+                        className="swatch"
+                        style={{ backgroundColor: car.color?.value }}
+                      ></span>
+
+                      {car.color?.name}
                     </td>
                   </tr>
                 </tbody>
@@ -69,7 +77,14 @@ export const Home = connect(
             </details>
           )}
 
-          {!car && <h3>Please select a car</h3>}
+          {!car && (
+            <>
+              <p>
+                You have no cars selected. Please select a car from the list of
+                cars or <NavLink to="/add-vehicle">add a new car</NavLink>.
+              </p>
+            </>
+          )}
 
           <NavLink className="fab" to="/add-vehicle">
             Add Vehicle

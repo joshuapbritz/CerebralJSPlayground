@@ -15,7 +15,7 @@ const State = {
       id: "ghj787gyuyg",
       make: "Toyota",
       model: "Conquest",
-      color: { name: "Blue", value: "#0099ff" },
+      color: { name: "Blue", value: "#000099" },
     },
     {
       id: "kjhg7686g6g",

@@ -57,3 +57,11 @@ code {
   color: #fff;
   font-weight: bold;
 }
+
+a:not(.fab) {
+  color: rgb(7, 172, 70);
+}
+
+a:not(.fab):hover {
+  opacity: 0.5;
+}

@@ -50,3 +50,12 @@ code {
 summary {
   cursor: pointer;
 }
+
+.swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  vertical-align: top;
+  margin-right: 10px;
+}

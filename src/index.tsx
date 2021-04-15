@@ -6,14 +6,12 @@ import App from "./config/index";
 import reportWebVitals from "./reportWebVitals";
 import { Home } from "./pages/home/Home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Sidebar } from "./components/sidebar/Sidebar";
 import { Toolbar } from "./components/toolbar/Toolbar";
 import { AddVehicle } from "./pages/add-vehicle/AddVehicle";
 
 ReactDOM.render(
   <Container app={App}>
     <Toolbar />
-    <Sidebar />
 
     <BrowserRouter>
       <Switch>
