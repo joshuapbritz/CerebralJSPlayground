@@ -39,20 +39,26 @@ export const AddVehicle = connect(
             }}
           >
             <div className="form-control">
-              <input placeholder="Make" type="text" name="make" />
+              <input required placeholder="Make" type="text" name="make" />
             </div>
 
             <div className="form-control">
-              <input placeholder="Model" type="text" name="model" />
+              <input required placeholder="Model" type="text" name="model" />
             </div>
 
             <div className="form-row">
               <div className="form-control">
-                <input placeholder="Color" type="text" name="colorname" />
+                <input
+                  required
+                  placeholder="Color"
+                  type="text"
+                  name="colorname"
+                />
               </div>
 
               <div className="form-control">
                 <input
+                  required
                   placeholder="Color value"
                   type="color"
                   name="colorvalue"
