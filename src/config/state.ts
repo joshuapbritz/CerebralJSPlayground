@@ -1,7 +1,7 @@
 // import { state } from "cerebral";
 
 export default {
-  value: "Joshua",
+  name: "Joshua",
   age: 22,
   surname: "Britz",
 };

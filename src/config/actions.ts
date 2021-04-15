@@ -6,7 +6,7 @@ export function initialize(...args: any[]) {
 
 export function changeName({ store, get }: any) {
   const name = get(props`name`);
-  store.set(moduleState`value`, name);
+  store.set(moduleState`name`, name);
 }
 
 export const createId = ({ ids }: any) => ({ id: ids.create() });
