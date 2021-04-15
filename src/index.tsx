@@ -7,11 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 import { Home } from "./pages/Home";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Container app={App}>
-      <Home />
-    </Container>
-  </React.StrictMode>,
+  <Container app={App}>
+    <Home />
+  </Container>,
   document.getElementById("root")
 );
 
