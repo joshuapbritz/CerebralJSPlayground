@@ -14,4 +14,12 @@ export function selectCar({ store, get }: any) {
   store.set(state`selectedCar`, car);
 }
 
+export function addCar({ store, get }: any) {
+  const id = get(props`id`);
+  const vehicle = get(props`car`);
+  const compiled = { id, ...vehicle };
+  store.push(state`cars`, compiled);
+  store.set(state`selectedCar`, compiled);
+}
+
 export const createId = ({ ids }: any) => ({ id: ids.create() });

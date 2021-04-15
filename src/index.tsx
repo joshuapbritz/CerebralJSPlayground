@@ -4,11 +4,23 @@ import "./index.css";
 import { Container } from "@cerebral/react";
 import App from "./config/index";
 import reportWebVitals from "./reportWebVitals";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/home/Home";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Sidebar } from "./components/sidebar/Sidebar";
+import { Toolbar } from "./components/toolbar/Toolbar";
+import { AddVehicle } from "./pages/add-vehicle/AddVehicle";
 
 ReactDOM.render(
   <Container app={App}>
-    <Home />
+    <Toolbar />
+    <Sidebar />
+
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/add-vehicle" component={AddVehicle} />
+      </Switch>
+    </BrowserRouter>
   </Container>,
   document.getElementById("root")
 );

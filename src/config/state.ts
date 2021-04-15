@@ -1,7 +1,15 @@
-const state = {
+import { Car } from "../model/car";
+import { state } from "cerebral";
+
+const State = {
   name: "Joshua",
   surname: "Britz",
   selectedCar: null,
+  carCount: (get: any) => {
+    const cars: Car[] = get(state`cars`);
+    const count = cars?.length ?? 0;
+    return `${count} car${count === 1 ? "" : "s"}`;
+  },
   cars: [
     {
       id: "ghj787gyuyg",
@@ -24,4 +32,4 @@ const state = {
   ],
 };
 
-export default state;
+export default State;

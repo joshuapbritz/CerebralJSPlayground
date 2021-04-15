@@ -7,14 +7,17 @@ import styles from "./Toolbar.module.scss";
 interface ToolbarProps {
   car: Car;
   name: string;
+  count: string;
 }
 
 export const Toolbar = connect(
-  { car: state`selectedCar`, name: state`name` },
-  ({ car, name }: ToolbarProps) => {
+  { car: state`selectedCar`, name: state`name`, count: state`carCount` },
+  ({ car, name, count }: ToolbarProps) => {
     return (
       <nav className={styles.Toolbar}>
-        <div className="logo">CarApp | {name}</div>
+        <div className="logo">
+          CarApp | {name} | {count}
+        </div>
         {!!car && (
           <div className="current">
             {car.make} {car.model}

@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "@cerebral/react";
 import { state } from "cerebral";
-import { Toolbar } from "../components/toolbar/Toolbar";
 import "./Home.scss";
-import { Sidebar } from "../components/sidebar/Sidebar";
-import { Car } from "../model/car";
+import { Car } from "../../model/car";
+import { NavLink } from "react-router-dom";
 
 interface HomeProps {
   name: string;
@@ -21,9 +20,6 @@ export const Home = connect(
   ({ name, surname, car }: HomeProps) => {
     return (
       <>
-        <Toolbar />
-        <Sidebar />
-
         <div className="Home">
           <h1>
             Hello{" "}
@@ -74,6 +70,10 @@ export const Home = connect(
           )}
 
           {!car && <h3>Please select a car</h3>}
+
+          <NavLink className="fab" to="/add-vehicle">
+            Add Vehicle
+          </NavLink>
         </div>
       </>
     );

@@ -14,9 +14,10 @@
     list-style: none;
 
     li {
-      text-align: center;
+      text-align: left;
       line-height: 45px;
       cursor: pointer;
+      padding: 0 5%;
 
       &.active {
         background-color: #ddd;
