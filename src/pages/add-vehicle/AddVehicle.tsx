@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "@cerebral/react";
 import { sequences } from "cerebral";
 import styles from "./AddVehicle.module.scss";
-import { Car } from "../../model/car";
 import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
+import * as act from "./AddVehicle.actions";
 
 export const AddVehicle = connect(
   {
@@ -24,18 +24,10 @@ export const AddVehicle = connect(
             id="vehicle-form"
             onSubmit={(event) => {
               event.preventDefault();
-              const data = new FormData(event.target as any);
-              const newCar: Partial<Car> = {
-                make: data.get("make")?.toString(),
-                model: data.get("model")?.toString(),
-                color: {
-                  name: data.get("colorname")?.toString() as any,
-                  value: data.get("colorvalue")?.toString() as any,
-                },
-              };
-
-              addCar({ car: newCar });
-              push("/");
+              act.submitForm(event.target as any).then((car) => {
+                addCar({ car });
+                push("/");
+              });
             }}
           >
             <div className="form-control">
