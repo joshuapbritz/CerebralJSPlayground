@@ -18,7 +18,7 @@ export const Home = connect(
     surname: state`surname`,
     car: state`selectedCar`,
   },
-  ({ name, surname, car }: HomeProps) => {
+  (props: HomeProps) => {
     return (
       <>
         <Sidebar />
@@ -27,11 +27,11 @@ export const Home = connect(
           <h1>
             Hello{" "}
             <strong>
-              {name} {surname}
+              {props.name} {props.surname}
             </strong>
           </h1>
 
-          {!!car && (
+          {!!props.car && (
             <div className="VehicleDetails">
               <table>
                 <tbody>
@@ -43,7 +43,7 @@ export const Home = connect(
                   <tr>
                     <td>Make and Model</td>
                     <td>
-                      {car.make} {car.model}
+                      {props.car.make} {props.car.model}
                     </td>
                   </tr>
 
@@ -52,10 +52,10 @@ export const Home = connect(
                     <td>
                       <span
                         className="swatch"
-                        style={{ backgroundColor: car.color?.value }}
+                        style={{ backgroundColor: props.car.color?.value }}
                       ></span>
 
-                      {car.color?.name}
+                      {props.car.color?.name}
                     </td>
                   </tr>
                 </tbody>
@@ -63,7 +63,7 @@ export const Home = connect(
             </div>
           )}
 
-          {!!car && (
+          {!!props.car && (
             <details>
               <summary>
                 <span>State Details</span>
@@ -71,13 +71,13 @@ export const Home = connect(
 
               <article>
                 <code>
-                  <pre>{JSON.stringify(car, null, 4)}</pre>
+                  <pre>{JSON.stringify(props.car, null, 4)}</pre>
                 </code>
               </article>
             </details>
           )}
 
-          {!car && (
+          {!props.car && (
             <>
               <p>
                 You have no cars selected. Please select a car from the list of

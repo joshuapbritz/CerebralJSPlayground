@@ -9,6 +9,7 @@ export default App(
     app.on("initialized", () => {
       app.getSequence("initialize")();
     });
+
     return {
       state,
       sequences,
